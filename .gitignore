@@ -1,0 +1,39 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# --- Node ---
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.parcel-cache/
+dist/
+
+# --- Secrets (never commit) ---
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.mobileprovision
+*.keystore
+
+# --- Generated design artifacts (produce these in YOUR project, not here) ---
+/assets/design-tokens.json
+/assets/design-tokens.css
+/logos/
+/icons/
+/cip/
+/plans/reports/
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
