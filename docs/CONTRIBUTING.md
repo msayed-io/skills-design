@@ -162,6 +162,22 @@ Rules:
 
 ## 8. Tests
 
+### Repository-level contract check
+
+The root tool is dependency-free and must pass before opening a pull request:
+
+```bash
+python3 scripts/repo_tool.py validate
+python3 scripts/repo_tool.py catalog --output /tmp/skills.json
+diff -u catalog/skills.json /tmp/skills.json
+```
+
+It validates frontmatter, activation-name uniqueness, kebab-case directories, local Markdown links,
+and documented bundle members. Long `SKILL.md` files are reported as warnings rather than failures so
+the existing library can be migrated to progressive disclosure incrementally. The committed
+`catalog/skills.json` is generated output and must be updated in the same change as any skill inventory
+or frontmatter change.
+
 Five skills ship pytest suites (18 files, **230 passing tests** on this checkout):
 
 ```bash

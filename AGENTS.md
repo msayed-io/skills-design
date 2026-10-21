@@ -30,6 +30,11 @@ Human-oriented project profile: [`README.md`](README.md). Per-skill detail: [`do
 8. **Do not "improve" this repository while using it.** You are a consumer here. Edits to skills are a
    separate, deliberate task governed by [`docs/CONTRIBUTING.md`](docs/CONTRIBUTING.md).
 
+9. **Use the machine interface for discovery and installation.** Read [`catalog/skills.json`](catalog/skills.json)
+   or run `python3 scripts/repo_tool.py catalog`; install by activation name with
+   `python3 scripts/repo_tool.py install <name> --target <skill-discovery-dir>`. Do not infer rename
+   rules or sibling dependencies from directory names.
+
 ---
 
 ## 2. What a skill is (the contract)

@@ -1,0 +1,30 @@
+name: Validate repository
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    name: Skill contracts and catalog
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Validate skill contracts
+        run: python3 scripts/repo_tool.py validate
+      - name: Rebuild catalog
+        run: python3 scripts/repo_tool.py catalog --output /tmp/skills.json
+      - name: Ensure catalog is committed and current
+        run: diff -u catalog/skills.json /tmp/skills.json
+      - name: Check executable help surfaces
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/repo_tool.py --help >/dev/null
+          python3 scripts/repo_tool.py install --help >/dev/null
+          python3 scripts/repo_tool.py validate >/dev/null

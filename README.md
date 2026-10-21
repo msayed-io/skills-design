@@ -198,6 +198,29 @@ python3 scripts/search.py "saas dashboard" --domain style -n 1   # ui-ux-pro-max
 node scripts/inject-brand-context.cjs --json                     # brand (needs docs/brand-guidelines.md)
 ```
 
+### Agent-safe install and discovery
+
+For automated consumers, use the repository tool instead of copying directories by hand. It resolves
+the frontmatter activation name, prevents accidental overwrites, and installs documented sibling bundles:
+
+```bash
+# List the machine-readable catalog
+python3 /path/to/skills-design/scripts/repo_tool.py catalog
+
+# Install one skill by directory name or activation name
+python3 /path/to/skills-design/scripts/repo_tool.py install ui-ux-pro-max \
+  --target .claude/skills
+
+# Install the design router and all siblings it requires
+python3 /path/to/skills-design/scripts/repo_tool.py install --bundle design \
+  --target .claude/skills
+```
+
+The generated [`catalog/skills.json`](catalog/skills.json) is the stable machine interface: it lists
+every activation name, directory, description, resource type, and bundled file. Run
+`python3 scripts/repo_tool.py validate` after changing a skill; CI requires the committed catalog to
+match the generated catalog.
+
 ---
 
 ## Runtime requirements
