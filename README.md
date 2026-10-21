@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src=".github/assets/logo.png" alt="skills-design logo" width="120" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/assets/logo-dark.png" />
+  <img src=".github/assets/logo.png" alt="skills-design logo" width="120" />
+</picture>
 
 # skills-design
 

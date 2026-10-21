@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">skills-design mark</title>
+  <desc id="desc">An interlocking modular S and D mark for the skills-design repository.</desc>
+  <g fill="none" stroke-linejoin="round">
+    <path fill="#17212B" stroke="#17212B" stroke-width="8" d="M105 103h173c25 0 45 20 45 45v46H223l-50 31 50 31h100v46c0 25-20 45-45 45H105c-25 0-45-20-45-45v-46h100l50-31-50-31H60v-46c0-25 20-45 45-45Z"/>
+    <path fill="#FF6B5E" stroke="#FF6B5E" stroke-width="8" d="M296 151h65c52 0 94 42 94 94v22c0 52-42 94-94 94h-65v-66h57c16 0 28-12 28-28v-22c0-16-12-28-28-28h-57v-66Z"/>
+  </g>
+</svg>
